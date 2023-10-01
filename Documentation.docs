@@ -1,0 +1,54 @@
+1. Root Endpoint ("/")
+
+Description: Retrieve summary information about the blogs.
+
+HTTP Method: GET
+
+Request URL: http://localhost:8000/
+
+Response:
+
+Status Code: 200 (OK)
+Content Type: application/json
+Response Body:
+  {
+  "totalBlogs": 461,
+  "longestBlogTitle": "After 24 days at the box office, Sunny Deol's action film Gadar 2 became the second Hindi film to gross over ₹500 crore",
+  "blogsWithTitlePrivacy": 4,
+  "uniqueBlogTitles": [
+    "Privacy policy",
+    "Top 5 ways to save money on Subscriptions",
+     ...
+  ]
+}
+
+
+2. Blog Search Endpoint ("/api/blog-search")
+
+Description: Search for blogs based on a query parameter.
+
+HTTP Method: GET
+
+Request URL: http://localhost:8000/api/blog-search?query={query}
+
+Query Parameters:
+
+query (string, optional): The query string to search for in blog titles.
+Response:
+
+Status Code: 200 (OK)
+Content Type: application/json
+Response Body:
+{
+  "query": "privacy",
+  "numberOfResults": 4,
+  "matchingBlogs": [
+    {
+      // ... (details of matching blog 1)
+    },
+   
+    // ... (list of matching blogs)
+  ]
+}
+
+
